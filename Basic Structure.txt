@@ -1,0 +1,40 @@
+1. DB
+  id name transaction transactionDate
+  x    x            x             x
+  x    x            x             x
+  x    x            x             x
+
+2. POJO
+  autowired
+  id
+  name
+  transaction
+  transactionDate
+
+  Getters / Setters
+
+3. DAO or Interface for POJO
+
+4. Service
+  getAllCustomers
+  - Query all ids
+
+  getUserTransactionsForDates(id, beginDate, endDate)
+  - Query all transactions where id and transactionDate within a given range
+
+  getUserTransactions(id)
+  - Query all transactions where id
+
+Logic
+  calculateReward(transaction) function
+
+  calculateRewardBetweenDates(id, beginDate, endDate)
+    loop through result of getUserTransactionsForDates and run calculateReward for each to get month
+
+  loop through getUserTransactions
+    run calculateReward for each to get total
+
+View (Built in React)
+name pointsMonth1 pointsMonth2 pointsMonth3 total
+
+...
